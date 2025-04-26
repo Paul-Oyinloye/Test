@@ -9,28 +9,28 @@
 
 
 
-<label for ='BaggageWeight'>Enter Your Bggage weight</label>
-<input type="number" id="BaggageWeight">
-<button onclick="BaggageWeight()">Check Weight</button>
-
-<script>
-    function checkBaggageWeight() {
-        const weightInput = document.getElementbyID("BaggageWeight").value;
-        const weight  = parseFloat(weightInput);
-
-        if (isNaN(weight)) {
-          alert("Enter Luggage weight");
-          return;
+    <label for ="BaggageWeight">Enter Your Baggage weight</label>
+    <input type="number" id="BaggageWeight">
+    <button onclick="checkBaggageWeight()">Check Weight</button>
+    
+    <script>
+        function checkBaggageWeight() {
+            const weightInput = document.getElementById("BaggageWeight").value;
+            const weight  = parseFloat(weightInput);
+    
+            if (isNaN(weight)) {
+              alert("Enter Luggage weight");
+              return;
+            }
+    
+            if (weight > 15){
+                alert("Baggage exceeds 15KG allowance");
+            } else {
+                alert("Baggage is within weight limit");
+            }
         }
-
-        if (weight > 15){
-            alert("Baggage exceeds 15KG allowance");
-        } else {
-            alert("Baggage is within weight limit");
-        }
-    }
-
-</script>
+    
+    </script>
 
 
 
