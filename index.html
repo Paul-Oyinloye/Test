@@ -129,7 +129,7 @@ function calculateSum() {
   <label for="b">Enter b:</label>
   <input type="number" id="b" /><br><br>
 
-  <label for="l">Enter list (comma-separated integers):</label><br>
+  <label for="l">Enter Random Numbers (comma-separated integers):</label><br>
   <textarea id="l" rows="5" cols="40"></textarea><br><br>
 
   <button onclick="handleClick()">Calculate Sum</button>
@@ -159,7 +159,7 @@ function calculateSum() {
         .filter(num => !isNaN(num));
 
       const result = f4(a, b, lArray);
-      alert("The sum of multiples of " + a + " or " + b + " is: " + result);
+      alert("The sum of the multiples of " + a + " or " + b + " in the list is: " + result);
     }
   </script>
 
