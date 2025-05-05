@@ -123,45 +123,45 @@ function calculateSum() {
     
     <h2>Sum of Multiples</h2>
 
-  <label for="a">Enter a:</label>
-  <input type="number" id="a" /><br><br>
-
-  <label for="b">Enter b:</label>
-  <input type="number" id="b" /><br><br>
-
-  <label for="l">Enter Random Numbers (comma-separated integers):</label><br>
-  <textarea id="l" rows="5" cols="40"></textarea><br><br>
-
-  <button onclick="handleClick()">Calculate Sum</button>
-
-  <script>
-    // Function f4: returns sum of multiples of a or b in array l
-    function f4(a, b, l) {
-      let sum = 0;
-      for (let num of l) {
-        if (num % a === 0 || num % b === 0) {
-          sum += num;
+    <label for="a">Enter a:</label>
+    <input type="number" id="a" /><br><br>
+  
+    <label for="b">Enter b:</label>
+    <input type="number" id="b" /><br><br>
+  
+    <label for="l">Enter Random Numbers (comma-separated integers):</label><br>
+    <textarea id="l" rows="5" cols="40"></textarea><br><br>
+  
+    <button onclick="handleClick()">Calculate Sum</button>
+  
+    <script>
+      // Function f4: returns sum of multiples of a or b in array l
+      function f4(a, b, l) {
+        let sum = 0;
+        for (let num of l) {
+          if (num % a === 0 || num % b === 0) {
+            sum += num;
+          }
         }
+        return sum;
       }
-      return sum;
-    }
-
-    // Handle button click
-    function handleClick() {
-      const a = parseInt(document.getElementById("a").value);
-      const b = parseInt(document.getElementById("b").value);
-      const lInput = document.getElementById("l").value;
-
-      // Convert input string to array of integers
-      const lArray = lInput
-        .split(',')
-        .map(str => parseInt(str.trim()))
-        .filter(num => !isNaN(num));
-
-      const result = f4(a, b, lArray);
-      alert("The sum of the multiples of " + a + " or " + b + " is: " + result);
-    }
-  </script>
+  
+      // Handle button click
+      function handleClick() {
+        const a = parseInt(document.getElementById("a").value);
+        const b = parseInt(document.getElementById("b").value);
+        const lInput = document.getElementById("l").value;
+  
+        // Convert input string to array of integers
+        const lArray = lInput
+          .split(',')
+          .map(str => parseInt(str.trim()))
+          .filter(num => !isNaN(num));
+  
+        const result = f4(a, b, lArray);
+        alert("The sum of the multiples of " + a + " or " + b + " is: " + result);
+      }
+    </script>
   
 
 
