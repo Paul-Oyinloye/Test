@@ -175,6 +175,66 @@ function calculateSum() {
 </p>
 <p>You may find the split function useful for creating arrays from the strings entered: <a href="https://www.w3schools.com/jsref/jsref_split.asp">Split</a></p>
 
+
+<label for="a">Enter factors (2 integers, comma-separated):</label><br>
+<textarea id="a" rows="2" cols="40"></textarea><br><br>
+
+<label for="l">Enter list of numbers (comma-separated):</label><br>
+<textarea id="l" rows="5" cols="40"></textarea><br><br>
+
+<button onclick="handleClick()">Calculate Sum</button>
+
+<script>
+  // f5: returns sum of all numbers in l that are divisible by any number in a
+  function f5(a, l) {
+    let sum = 0;
+    for (let num of l) {
+      if (a.some(factor => num % factor === 0)) {
+        sum += num;
+      }
+    }
+    return sum;
+  }
+
+  // handleClick: triggered when button is pressed
+  function handleClick() {
+    const aInput = document.getElementById("a").value;
+    const lInput = document.getElementById("l").value;
+
+    // Convert input strings to arrays of integers
+    const aArray = aInput
+      .split(',')
+      .map(str => parseInt(str.trim()))
+      .filter(num => !isNaN(num));
+
+    const lArray = lInput
+      .split(',')
+      .map(str => parseInt(str.trim()))
+      .filter(num => !isNaN(num));
+
+    // Check that a has exactly 2 numbers
+    if (aArray.length !== 2) {
+      alert("Please enter exactly 2 numbers in the 'a' input.");
+      return;
+    }
+
+    const result = f5(aArray, lArray);
+    alert("The sum of multiples of " + aArray.join(" or ") + " is: " + result);
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <p>Exercise 6, Arrays: f6 should take array parameters and return an integer.</p>
 <p>Create a function f6 to return the sum of all the multiples of factors in a 
     found in in l (a and l should be arrays of integers)</p>
